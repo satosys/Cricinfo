@@ -25,7 +25,7 @@ class CrickspriderSpider(scrapy.Spider):
         
         for i in range(0,len(players_link)):
             
-            player_url = Commmon_url + str(players_link[i])
+            player_url = super.Commmon_url + str(players_link[i])
                
             yield scrapy.Request(player_url, callback=self.parse_plyr_dtls)
             
