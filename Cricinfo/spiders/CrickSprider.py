@@ -15,7 +15,7 @@ class CrickspriderSpider(scrapy.Spider):
         'FEED_URI': 'tmp/cricinfo.csv'
     }
 
-    Commmon_url = "http://www.espncricinfo.com"
+    Commmon_url = "www.espncricinfo.com"
 
     def parse(self, response):
         
