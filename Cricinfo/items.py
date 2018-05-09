@@ -6,9 +6,14 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import Compose, MapCompose, Join, TakeFirst
 
 
 class CricinfoItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    Full_name_player = Field()
+    Born = Field()
+    Major_teams = Field()
+    Playing Role = Filed()
+    Batting style = Field()
+    Bowling style = Field()
