@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from scrapy.selector import HtmlXPathSelector
-from CricinfoItem.items import CricinfoItem
+#from scrapy.selector import HtmlXPathSelector
 
 class CrickspriderSpider(scrapy.Spider):
-    
+
     name = 'CrickSprider'
     
     allowed_domains = ['www.espncricinfo.com']
     
     start_url = ['www.espncricinfo.com/india/content/player/country.html?country=6']
-    
+
+    # location of csv file
+    custom_settings = {
+        'FEED_URI': 'tmp/cricinfo.csv'
+    }
+
     Commmon_url = "http://www.espncricinfo.com"
 
     def parse(self, response):

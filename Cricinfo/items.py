@@ -9,7 +9,6 @@ import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Compose, MapCompose, Join, TakeFirst
 
-
 class CricinfoItem(scrapy.Item):
     Full_name_player = Field()
     Born = Field()
