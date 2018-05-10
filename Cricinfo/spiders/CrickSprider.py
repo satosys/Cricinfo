@@ -37,9 +37,20 @@ class CrickspriderSpider(scrapy.Spider):
             "//* [@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[1]/span/text()").extract()
             Born = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[2]/span/text()").extract()
             Major_teams = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[3]/span/text()").extract()
-            item['Playing Role'] = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[4]/span/text()").extract()
-            item['Batting style'] = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[5]/span/text()").extract()
-            item['Bowling style'] = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[6]/span/text()").extract()
-            
+            Playing_Role = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[4]/span/text()").extract()
+            Batting_style = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[5]/span/text()").extract()
+            Bowling_style = response.xpath("//*[@id='ciHomeContentlhs']/div[3]/div[2]/div[1]/p[6]/span/text()").extract()
+
+            for item in zip(Full_name_player,Born,Major_teams,Playing_Role,Batting_style,Bowling_style):
+                 scraped_info = {
+                     'Full_name_player' : item[0],
+                     'Born' : item[1],
+                     'Major_teams' : item[2],
+                     'Playing_Role' : item[3],
+                     'Batting_style': item[4],
+                     'Bowling_style': item[5]
+            }
+
+            yield scraped_info
 
      
