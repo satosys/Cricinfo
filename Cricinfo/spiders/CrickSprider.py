@@ -23,8 +23,7 @@ class CrickspriderSpider(scrapy.Spider):
 
         Commmon_url = "http://www.espncricinfo.com"
 
-        #for i in range(0,len(players_link)):
-        for i in range(0,2):
+        for i in range(0,len(players_link)):
             player_url = Commmon_url + str(players_link[i])
                
             yield scrapy.Request(player_url, callback=self.parse_plyr_dtls)
